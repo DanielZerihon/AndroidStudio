@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Yellow"
+    android:orientation="vertical"
+    tools:context=".fragment.Reg_Fragment">
+
+    <EditText
+        android:id="@+id/editTextEmailReg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Email"
+        android:inputType="textPersonName"/>
+<!--        android:text="daniel12@gmail.com" -->
+
+        />
+
+    <EditText
+        android:id="@+id/editTextPassReg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPersonName"/>
+<!--        android:text="123456" -->
+        />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="UserName"
+        android:inputType="textPersonName"/>
+<!--        android:text="sdsad"-->
+        />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Date"
+        android:inputType="textPersonName"/>
+<!--        android:text="asdsad" -->
+        />
+
+    <EditText
+        android:id="@+id/editTextFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Facebook"
+        android:inputType="textPersonName"/>
+<!--        android:text="dasd" -->
+        />
+
+    <ImageView
+        android:id="@+id/Selfi_pic_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        android:src="@drawable/ic_baseline_add_a_photo_24" />
+
+    <Button
+        android:id="@+id/button_reg_in_regF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Reg" />
+
+    <Button
+        android:id="@+id/Add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Add Item" />
+
+</LinearLayout>

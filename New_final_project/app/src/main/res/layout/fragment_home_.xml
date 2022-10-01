@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A59C9C"
+    tools:context=".fragment.Home_Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Yellow"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText_log_in_Email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Email"
+            android:inputType="textPersonName"/>
+<!--            android:text="daniel12@gmail.com" -->
+            />
+
+        <EditText
+            android:id="@+id/editText_log_in_Password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:onClick="login_func"/>
+<!--            android:text="123456" -->
+            />
+
+        <Button
+            android:id="@+id/log_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="log in" />
+
+        <Button
+            android:id="@+id/reg_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Reg Now" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:text="move" />
+
+    </LinearLayout>
+
+</FrameLayout>
