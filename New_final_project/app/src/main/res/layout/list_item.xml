@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
-    android:background="@color/Yellow"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:paddingTop="8dp">
+
+
+    android:foreground="?android:attr/selectableItemBackground">
 
     <!--        app:shapeAppearanceOverlay="@style/RoundCorner"-->
     <!--        />-->
+
+<!--    //<com.google.android.material.imageview.ShapeableImageView-->
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/title_image"
         android:layout_width="169dp"
         android:layout_height="134dp"
-
         android:layout_marginStart="224dp"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/avi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass"
+        />
 
     <TextView
         android:id="@+id/Facebook"
@@ -34,8 +38,9 @@
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="Facebook"
-        android:textColor="@color/black"
+        android:textColor="@color/Hard_brown"
         android:textSize="16dp"
+        android:fontFamily="@font/annie_use_your_telescope"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,8 +54,10 @@
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="Phone"
-        android:textColor="@color/black"
+        android:textColor="@color/Hard_brown"
+
         android:textSize="16dp"
+        android:fontFamily="@font/annie_use_your_telescope"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,9 +71,10 @@
         android:background="@drawable/textview_border"
         android:gravity="center"
         android:text="Date"
-        android:textColor="@color/black"
         android:textSize="16dp"
+        android:textColor="@color/Hard_brown"
         android:textStyle="bold"
+        android:fontFamily="@font/annie_use_your_telescope"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,21 +85,25 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="180dp"
         android:background="@drawable/textview_border"
+        android:fontFamily="@font/annie_use_your_telescope"
         android:gravity="center"
         android:text="Name"
-        android:textColor="@color/black"
+        android:textColor="@color/Hard_brown"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
         android:background="@drawable/textview_border"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_image" />
+        app:layout_constraintTop_toBottomOf="parent" />
+
     <!--        android:background="@color/underline"/>-->
 
 

@@ -4,91 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Yellow"
+    android:background="@color/cream"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".fragment.Reg_Fragment">
 
-    <EditText
-        android:id="@+id/editTextEmailReg"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ems="10"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Email"
-        android:inputType="textPersonName"/>
-<!--        android:text="daniel12@gmail.com" -->
+        android:orientation="horizontal">
 
-        />
+        <TextView
+            android:id="@+id/textView_reg_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTER"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:gravity="center"
+            android:textColor="@color/Hard_brown"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextPassReg"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Password"
-        android:inputType="textPersonName"/>
-<!--        android:text="123456" -->
-        />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="UserName"
-        android:inputType="textPersonName"/>
-<!--        android:text="sdsad"-->
-        />
+        <EditText
+            android:id="@+id/editTextEmailReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:hint="ENTER EMAIL"
+            android:inputType="textPersonName"
+            android:textColor="@color/Hard_brown"
+            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Date"
-        android:inputType="textPersonName"/>
-<!--        android:text="asdsad" -->
-        />
+        <EditText
+            android:id="@+id/editTextFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:hint="Instegram"
+            android:inputType="textPersonName"
+            android:textColor="@color/Hard_brown"
+            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/editTextFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Facebook"
-        android:inputType="textPersonName"/>
-<!--        android:text="dasd" -->
-        />
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:hint="Pay"
+            android:inputType="textPersonName"
+            android:textColor="@color/Hard_brown"
+            android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/Selfi_pic_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.8"
-        android:src="@drawable/ic_baseline_add_a_photo_24" />
+        <EditText
+            android:id="@+id/editTextPassReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:textColor="@color/Hard_brown"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/button_reg_in_regF"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="Reg" />
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:hint="UserName"
+            android:inputType="textPersonName"
+            android:textColor="@color/Hard_brown"
 
-    <Button
-        android:id="@+id/Add"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:hint="Phone"
+            android:inputType="textPersonName"
+            android:textColor="@color/Hard_brown"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/Selfi_pic_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:layout_weight="0.8"
+            android:src="@drawable/ic_baseline_add_a_photo_24" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="Add Item" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_reg_in_regF"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="REGISTER HERE"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/annie_use_your_telescope"
+            android:textSize="20sp"
+            android:backgroundTint="@color/Brown2"
+
+            />
+    </LinearLayout>
 
 </LinearLayout>
