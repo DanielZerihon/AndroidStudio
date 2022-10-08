@@ -1,5 +1,7 @@
 package com.example.new_final_project.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.new_final_project.Classes.MyAdapter;
 //import com.example.new_final_project.Classes.News_short;
@@ -25,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Welcome_Fragment extends Fragment {
+public class Welcome_Fragment extends Fragment implements MyAdapter.OnNoteListener {
 
 
     DatabaseReference database;
@@ -59,10 +62,11 @@ public class Welcome_Fragment extends Fragment {
         return v;
     }
 
-    // כאן נממש את הקוד של ה recyclerView
+    // the recyclerview implement
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         recyclerview = view.findViewById(R.id.recycler_view_id);
         database = FirebaseDatabase.getInstance().getReference("users");
@@ -70,8 +74,9 @@ public class Welcome_Fragment extends Fragment {
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         sitter_list = new ArrayList<>();
 
-        MyAdapter MyAdapter = new MyAdapter(getContext(), sitter_list);
+        MyAdapter MyAdapter = new MyAdapter(getContext(), sitter_list, this);
         recyclerview.setAdapter(MyAdapter);
+
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -97,4 +102,16 @@ public class Welcome_Fragment extends Fragment {
         });
 
     }
+
+    @Override
+    public void OnNoteClick(int position) {
+        String user_name = sitter_list.get(position).getHeading();
+        String Facebook_adress = sitter_list.get(position).getFacebook();
+        String official_facebook_url = "https://www.facebook.com/" + Facebook_adress;
+        sitter_list.get(position);
+        Toast.makeText(getActivity(), "Open " + user_name + " Facebook ...", Toast.LENGTH_SHORT).show();
+        Uri uri = Uri.parse(official_facebook_url);
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+    }
+
 }

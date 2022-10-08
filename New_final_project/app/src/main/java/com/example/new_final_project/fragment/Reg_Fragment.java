@@ -28,25 +28,25 @@ import com.squareup.picasso.Picasso;
  */
 public class Reg_Fragment extends Fragment {
 
-    private static final int PICK_IMAGE_REQUEST = 1;
+    // this 2 var contribute show us the photo after we choose it
     private static Uri mImageUri;
+    private static final int PICK_IMAGE_REQUEST = 1;
+    //
     private static Object chooseImage;
     private static Context context;
     private static View staticView;
-
-    public static Uri getmImageUri() {
-        return mImageUri;
-    }
-
-    //private Uri mImageUri;
     private EditText email;
     private EditText password;
     private EditText userName;
     private EditText dateText;
     private EditText facebook;
     private EditText PhoneNumber;
-    //private ImageView chooseImage;
-    private Intent data;
+
+
+    public static Uri getmImageUri()
+    {
+        return mImageUri;
+    }
 
     public static Reg_Fragment newInstance(String param1, String param2) {
         Reg_Fragment fragment = new Reg_Fragment();
@@ -55,20 +55,19 @@ public class Reg_Fragment extends Fragment {
         return fragment;
     }
 
-    // הפונקציה שרצה בלופ
+    // this function get called in loop from the main activity
     public static void setImage(int requestCode, int resultCode, Intent data, int RESULT_OK) {
-
-        // מקבל את התמונה עצמה
+        // here we get the photo
             mImageUri = data.getData();
-        // השמה של התמונה עצמה אל השדה הרצוי
+        // here we put the picture in the place for the user to see
             Picasso.with(context).load(mImageUri).into((ImageView) staticView.findViewById(R.id.Selfi_pic_fragment));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_reg_,container,false);
         Button new_reg_button = view.findViewById(R.id.button_reg_in_regF);
 
@@ -78,9 +77,8 @@ public class Reg_Fragment extends Fragment {
         dateText = view.findViewById(R.id.editTextDate);
         facebook = view.findViewById(R.id.editTextFacebook);
         PhoneNumber = view.findViewById(R.id.editTextPhone);
-
-        context = ((MainActivity) getActivity()).getApplicationContext();
         chooseImage = view.findViewById(R.id.Selfi_pic_fragment);
+        context = ((MainActivity) getActivity()).getApplicationContext();
 
         view.findViewById(R.id.Selfi_pic_fragment).setOnClickListener(new View.OnClickListener() {
             @Override

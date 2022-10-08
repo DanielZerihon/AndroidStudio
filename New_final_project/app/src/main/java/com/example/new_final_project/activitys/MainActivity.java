@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.new_final_project.Classes.MediaPlayerService;
+import com.example.new_final_project.Classes.MyAdapter;
 import com.example.new_final_project.Classes.User_builder;
 import com.example.new_final_project.R;
 import com.example.new_final_project.Classes.User;
@@ -44,23 +45,21 @@ import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     private FirebaseAuth mAuth;
     private FirebaseStorage mStorageRef;
     private StorageTask mUploadTask;
-    private Button start;
     Boolean isPlaying = false;
     private static ImageView sound_image_view;
     private int current_image;
     int[] images={R.drawable.sound_off, R.drawable.sound_on};
 
-    Button insta;
 
-    // הפונקציה רצה בלופ תמיד
+    // this function will run in loop and send the vars to the setImage in the Reg_Fragment for show
+    //      to the user the pic that he choose.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // הפונקציה שולחת את הנתונים האלו בלופ ומנסה לעשות set image
+        // the func trigger the func setImage in a loop with the params
         Reg_Fragment.setImage(requestCode, resultCode, data, RESULT_OK);
     }
 
@@ -76,14 +75,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void gotourl(String s) {
+    private void goToURL(String s) {
         Uri uri = Uri.parse(s);
         startActivity(new Intent(Intent.ACTION_VIEW, uri));
     }
 
-
     @Override
     public void onClick(View view) {
+
         sound_image_view=(ImageView) findViewById(R.id.sound_imageView);
         current_image++;
         current_image=current_image % images.length;
@@ -146,14 +145,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (Reg_Fragment.getmImageUri() != null) {
             mStorageRef = FirebaseStorage.getInstance();
+
+            // here the we define where we want to put the file and the file get Special name with
+            //      the current time by millis and we put '.' and the file Extension (.jpg)
             StorageReference fileReference = mStorageRef.getReference().child(System.currentTimeMillis()
                     + "." + getFileExtension(Reg_Fragment.getmImageUri()));
 
+            // here is the upload function to the storage
             mUploadTask = fileReference.putFile(Reg_Fragment.getmImageUri())
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            boolean flag = false;
+                            // this needs to show the user the progress bar
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
                                 @Override
@@ -161,12 +164,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 }
                             }, 500);
 
-                            Toast.makeText(MainActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
-                            flag = true;
+                            Toast.makeText(MainActivity.this, "Upload to storage successful", Toast.LENGTH_LONG).show();
 
+                            // Here is the push to the realtime data base
                             taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
+                                    // in this function i took the uri of the image and i put it as
+                                    //    a string in every user at the imgageAccessToken
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     User_builder user_build = new User_builder.Builder()
                                             .heading(userNameText.toString())

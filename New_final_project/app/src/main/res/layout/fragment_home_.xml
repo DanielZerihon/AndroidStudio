@@ -134,7 +134,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/Brown2"
                 android:fontFamily="@font/annie_use_your_telescope"
-                android:text="Guest"
+                android:text="Log As Parent"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
         </LinearLayout>

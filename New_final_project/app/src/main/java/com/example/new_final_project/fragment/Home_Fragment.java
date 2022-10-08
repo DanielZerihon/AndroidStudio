@@ -54,7 +54,6 @@ public class Home_Fragment extends Fragment {
         Button reg_button = view.findViewById(R.id.reg_button);
 
 
-
         log_in_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

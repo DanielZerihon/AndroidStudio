@@ -23,11 +23,9 @@ public class MediaPlayerService extends Service {
         //media player
 //        player = android.media.MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
         player = android.media.MediaPlayer.create(this, R.raw.cvish_hahof);
-
         player.setLooping(true);
         player.start();
         return START_STICKY;
-
     }
 
     @Override
